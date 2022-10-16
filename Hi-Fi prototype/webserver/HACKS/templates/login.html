@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>H.A.C.K.S. Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="main">
+
+        <div class="row">
+            <div id="logo"  class="col d-flex justify-content-center">
+               <img class="img_logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo_H.A.C.K.S">
+            </div>
+        </div>
+
+        <div class="row wrapper d-flex justify-content-center" id="login_page_content">
+            <div class="card col-7" id="card">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+                </div>
+                <div class="card-body" id="card_content">
+
+                    <form action="{{ url_for('login') }}" method="POST" class="needs-validation" name="form" id="form" novalidate>
+                        <div class="form-group">
+                            <label for="inputEmail">Email:</label>
+                            <input type="text" class="form-control" id="inputEmail" placeholder="@some.email.com"
+                                   name="inputEmail" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback"><p>Please fill out with a correct email address.</p></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword">Password:</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"
+                                   name="inputPassword" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback"><p>Please fill out with a correct password.</p></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary float-right">Login</button>
+                    </form>
+
+                </div>
+                <div class="card-footer" id="card_footer">
+                    <div class="d-flex justify-content-center">
+                        Don't have an account? <a href="/create_user"> Sign Up</a>
+                    </div>
+
+                </div>
+
+                <script>
+                    // Disable form submissions if there are invalid fields
+                    (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                            // Get the forms we want to add validation styles to
+                            var forms = document.getElementsByClassName('needs-validation');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                }, false);
+                            });
+                        }, false);
+                    })();
+                </script>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

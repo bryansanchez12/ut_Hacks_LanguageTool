@@ -1,0 +1,150 @@
+/*  Style Sheet */
+body{
+    background: #ECECE4;
+}
+
+.img_logo{
+    height: 200px;
+    weight: 100px;
+}
+
+
+.cardJ{
+    position: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-family: "Lucida Calligraphy", monospace;
+    font-size: 30px;
+    width: 50%;
+    height:400px;
+    box-shadow: 5px 5px #b7b4b4;
+    padding-top: 10px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.cardB{
+    position: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-family: "Lucida Calligraphy", monospace;
+    font-size: 30px;
+    width: 50%;
+    height:400px;
+    box-shadow: 5px 5px #b7b4b4;
+    padding-top: 10px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.cardM{
+    position: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-family: "Lucida Calligraphy", monospace;
+    font-size: 30px;
+    width: 50%;
+    height:400px;
+    box-shadow: 5px 5px #b7b4b4;
+    padding-top: 10px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+.card{
+    position: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.wrapper{
+    padding-top: 20px;
+}
+
+.page-content{
+    padding-top: 15px;
+}
+
+.ipt{
+    height: 80%;
+}
+
+.px-2 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.it-right{
+    float: right}
+
+#name{
+    text-align: center;
+    font-size: 80px;
+    font-family: "Colonna MT", sans-serif;}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .navbar a {float: left;}
+    div.main {margin-left: 0;}
+}
+
+
+.navbar.fixed-left{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1030
+}
+
+.navbar.fixed-left{
+    bottom:0;
+    width:232px;
+    flex-flow:column nowrap;
+    align-items:flex-start
+}
+
+.navbar.fixed-left .navbar-collapse{
+    flex-grow:0;
+    flex-direction:column;
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav{
+    flex-direction:column;
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item{
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item {
+    top:0
+}
+
+.navbar.fixed-left .navbar-nav .nav-item {
+    border-top:.3em solid transparent;
+    border-left:.3em solid;
+    border-bottom:.3em solid transparent;
+    border-right:none;
+    vertical-align:baseline
+}
+
+.navbar.fixed-left .navbar-nav .nav-item {
+    left:100%
+}
+
+.navbar-custom{
+    background-color: #42B2CA;
+}

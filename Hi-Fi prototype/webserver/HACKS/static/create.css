@@ -1,0 +1,70 @@
+/*  Style Sheet */
+body{
+    background: #ECECE4;
+}
+h1{
+    color: #090909;
+    position: center;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .navbar a {float: left;}
+    div.main {margin-left: 0;}
+}
+
+
+.navbar.fixed-left{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1030
+}
+
+.navbar.fixed-left{
+    bottom:0;
+    width:232px;
+    flex-flow:column nowrap;
+    align-items:flex-start
+}
+
+.navbar.fixed-left .navbar-collapse{
+    flex-grow:0;
+    flex-direction:column;
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav{
+    flex-direction:column;
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item{
+    width:100%
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item {
+    top:0
+}
+
+.navbar.fixed-left .navbar-nav .nav-item {
+    border-top:.3em solid transparent;
+    border-left:.3em solid;
+    border-bottom:.3em solid transparent;
+    border-right:none;
+    vertical-align:baseline
+}
+
+.navbar.fixed-left .navbar-nav .nav-item {
+    left:100%
+}
+.navbar-custom{
+    background-color: #42B2CA;
+}

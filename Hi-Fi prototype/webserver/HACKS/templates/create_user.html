@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>H.A.C.K.S. Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="main">
+
+        <div class="row">
+            <div id="logo"  class="col d-flex justify-content-center">
+                <img class="img_logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo_H.A.C.K.S">
+            </div>
+        </div>
+
+        <div class="row wrapper d-flex justify-content-center" id="login_page_content">
+            <div class="card col-7" id="card">
+                <div class="card-header">
+                    <h3>Sign Up</h3>
+                </div>
+                <div class="card-body" id="card_content">
+
+                    <form action="../create_user" method="POST" class="needs-validation" name="form" id="form" novalidate>
+                        <!-- Name -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="inputName">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputName"
+                                       name="inputName" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a correct Name.</p></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-10">
+
+                        </div>
+
+                        <!-- Surname -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="inputSurname">Surname:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputSurname"
+                                       name="inputSurname" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a correct Surname.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Age -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="inputAge">Age:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputAge"
+                                       name="inputAge" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a correct Age.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- College -->
+                        <div class="form-group  row">
+                            <label class="col-sm-2 col-form-label" for="inputCollege">College:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCollege"
+                                       name="inputCollege" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a College name.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Language -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="language">Language:</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="language" required>
+                                    <option selected id="language_selected">Choose...</option>
+                                    <option value="English">English</option>
+                                    <option value="Spanish">Spanish</option>
+                                    <option value="Dutch">Dutch</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="inputEmail">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputEmail" placeholder="@some.email.com"
+                                       name="inputEmail" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a correct email address.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="inputPassword">Password:</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"
+                                       name="inputPassword" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback"><p>Please fill out with a correct password.</p></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary float-right">Submit</button>
+                    </form>
+
+                </div>
+
+                <script>
+                    // Disable form submissions if there are invalid fields
+                    (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                            // Get the forms we want to add validation styles to
+                            var forms = document.getElementsByClassName('needs-validation');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                }, false);
+                            });
+                        }, false);
+                    })();
+                </script>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+
+
+</html>

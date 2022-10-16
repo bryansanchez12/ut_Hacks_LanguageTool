@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H.A.C.K.S Grammar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+
+        <!-- side bar-->
+        <div class="col-2 position-fixed">
+
+            <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-left">
+                <div class="pl-2">
+                    <h1>H.A.C.K.S.</h1>
+                </div>
+
+                <div class="collapse navbar-collapse" id="index">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/home" class="nav-link">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/check" class="nav-link">Check Text</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/create" class="nav-link">Create Text</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/feedback" class="nav-link">Feedback & <br> Improvement</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/settings" class="nav-link">Settings</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/close" class="nav-link">Close</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col offset-3">
+            <h1><u>Feedback and Improvement</u></h1>
+
+            <div class="container page-content">
+                <div class="d-flex justify-content-center">
+                    <h3>Grammar</h3>
+                </div>
+                <div class="wrapper row">
+                    <!-- Recent Scores card -->
+                    <div class="col-5" style="align-content: center">
+                        <div class="card">
+                            <div class="card-header">
+                                <b>Scores</b>
+                            </div>
+
+                            <!-- Table with global scores -->
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody id="iScores">
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Responsive button that allows the user to see their mistakes -->
+                        <div class="mt-4 d-flex justify-content-center">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mistakes">
+                                View mistakes
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="mistakes" tabindex="-1" role="dialog" aria-labelledby="longTitle"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="longTitle">Mistakes</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-sm justify-content-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Mistakes</th>
+                                                        <th scope="col">Correct Form</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="modal_table">
+                                                    <tr>
+                                                        <td>mistake</td>
+                                                        <td>solution</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+                    <!-- Important information card -->
+                    <div class="col-7 ">
+                        <div class="card ">
+                            <div class="card-header">
+                                <b>Here's a tip</b>
+                            </div>
+
+                            <!-- Tip generated by the assistant -->
+                            <div class="card-body">
+                                <p id="tip">
+                                    Practice writing is usually the best way to practice your mistakes in grammar, however, reading is the best way to learn it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsive button that redirect the user to a practise stage -->
+                        <div class="mt-4 d-flex justify-content-center" >
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#practise">
+                                Practise grammar
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="practise" tabindex="-1" role="dialog" aria-labelledby="longTitle2"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="longTitle2">Practise Grammar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <h4>Change the verb into the past simple. It's to practise the past simple:</h4>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>They </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q1">
+                                                    </div>
+                                                    <div>
+                                                        <p> (speak) French to the waitress.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>At the age of 23, he </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q2">
+                                                    </div>
+                                                    <div>
+                                                        <p> (become) a doctor.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>She </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q3">
+                                                    </div>
+                                                    <div>
+                                                        <p> (have) a baby in June.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <h4>Put the verb into the present simple. Be careful about the spelling.</h4>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>John </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q4">
+                                                    </div>
+                                                    <div>
+                                                        <p> (study) French at school.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>I hope John </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q5">
+                                                    </div>
+                                                    <div>
+                                                        <p> (pass) the exam.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div>
+                                                        <p>The plane  </p>
+                                                    </div>
+                                                    <div class="col-3 px-2">
+                                                        <input type="text" class="form-control ipt" aria-label="Small"
+                                                               aria-describedby="inputGroup-sizing-sm" id="Q6">
+                                                    </div>
+                                                    <div>
+                                                        <p> (fly) low over the airport.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" onclick="checkAnswersGrammar()"
+                                            >Check answers</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                            >Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container mt-5 row d-flex justify-content-between">
+                    <a role="button" class="btn btn-secondary" href="/feedback">
+                        Previous
+                    </a>
+
+                    <a role="button" class="btn btn-secondary" href="/feedback/spelling">
+                        Next
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='improvements.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</html>

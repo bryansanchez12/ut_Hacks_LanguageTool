@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H.A.C.K.S spelling</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+
+        <!-- side bar-->
+        <div class="col-2 position-fixed">
+
+            <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-left">
+                <div class="pl-2">
+                    <h1>H.A.C.K.S.</h1>
+                </div>
+
+                <div class="collapse navbar-collapse" id="index">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/home" class="nav-link">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/check" class="nav-link">Check Text</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/create" class="nav-link">Create Text</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/feedback" class="nav-link">Feedback & <br> Improvement</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/settings" class="nav-link">Settings</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/close" class="nav-link">Close</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col offset-3">
+            <h1><u>Feedback and Improvement</u></h1>
+
+            <div class="container page-content">
+                <div class="d-flex justify-content-center">
+                    <h3>Spelling</h3>
+                </div>
+                <div class="wrapper row">
+                    <!-- Recent Scores card -->
+                    <div class="col-5" style="align-content: center">
+                        <div class="card">
+                            <div class="card-header">
+                                <b>Scores</b>
+                            </div>
+
+                            <!-- Table with global scores -->
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody id="iScores">
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>doc_Name</td>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Responsive button that allows the user to see their mistakes -->
+                        <div class="mt-4 d-flex justify-content-center">
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mistakes">
+                                View mistakes
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="mistakes" tabindex="-1" role="dialog" aria-labelledby="longTitle"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="longTitle">Mistakes</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-sm justify-content-center">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Mistakes</th>
+                                                    <th scope="col">Correct Form</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="modal_table">
+                                                <tr>
+                                                    <td>mistake</td>
+                                                    <td>solution</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Important information card -->
+                    <div class="col-7 ">
+                        <div class="card ">
+                            <div class="card-header">
+                                <b>Here's a tip</b>
+                            </div>
+
+                            <!-- Tip generated by the assistant -->
+                            <div class="card-body">
+                                <p id="tip">
+                                    Keep a list of the words you frequently misspelled and try to review it daily
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsive button that redirect the user to a practise stage -->
+                        <div class="mt-4 d-flex justify-content-center" >
+
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#practise">
+                                Practise spelling
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="practise" tabindex="-1" role="dialog" aria-labelledby="longTitle2"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="longTitle2">Mistakes</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <h4>Choose the correct spelling and <b>check your answers carefully</b> at the end.</h4>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q1">
+                                                        1. Which one is correct?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q1">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">writting</option>
+                                                        <option value="2">writeing</option>
+                                                        <option value="3">writing</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q2">
+                                                        2. Which one is correct?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q2">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">because</option>
+                                                        <option value="2">becuase</option>
+                                                        <option value="3">becuse</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q3">
+                                                        3. Which one is correct?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q3">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">haveing</option>
+                                                        <option value="2">having</option>
+                                                        <option value="3">havving</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q4">
+                                                        4. Which is right?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q4">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">tomorrow</option>
+                                                        <option value="2">tommorow</option>
+                                                        <option value="3">tommorrow</option>
+                                                    </select>
+                                                </div>
+
+
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q5">
+                                                        5. Which is correct?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q5">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">studing</option>
+                                                        <option value="2">studieing</option>
+                                                        <option value="3">studying</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <label class="col-form-label" for="Q6">
+                                                        6. Which is correct for a place of study?
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <select class="form-control" id="Q6">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">college</option>
+                                                        <option value="2">collage</option>
+                                                        <option value="3">colege</option>
+                                                    </select>
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" onclick="checkAnswersSpelling()"
+                                            >Check answers</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container mt-5 row d-flex justify-content-between">
+                    <a role="button" class="btn btn-secondary" href="/feedback/grammar">
+                        Previous
+                    </a>
+
+                    <a role="button" class="btn btn-secondary" href="/feedback/punctuation">
+                        Next
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='improvements.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
